@@ -20,12 +20,13 @@ jobs:
       - uses: actions/setup-python@v2
         with:
           python-version: 3.9.2
-      # - name: Get changed files
-      #   id: changed-files
-      #   uses: tj-actions/changed-files@v41
-      #   with:
-      #     path: semgrep-rules
-      #     separator: ","
+      - name: Find merge base with develop
+        id: merge_base
+        run: echo "BASE_COMMIT=$(git -C semgrep-rules merge-base origin/develop HEAD)" >> $GITHUB_ENV
+      - name: Get changed files
+        id: changed-files
+        run: |
+          echo "all_changed_files=$(git -C semgrep-rules diff --quiet $BASE_COMMIT HEAD | xargs | sed -e 's/ /,/g')" >> $GITHUB_OUTPUT
       # need to delete these directories or else we get linter errors during
       # the "validate" step.
       - name: install semgrep
