@@ -10,9 +10,11 @@ rules:
     references:
       - https://guides.rubyonrails.org/configuring.html#config-filter-parameters
       - https://api.rubyonrails.org/v7.1/classes/ActiveSupport/ParameterFilter.html
+    cwe: 
+    - 'CWE-532: Insertion of Sensitive Information into Log File'
     likelihood: HIGH
     impact: MEDIUM
-    confidence: HIGH
+    confidence: LOW
     subcategory:
       - audit
   patterns:
