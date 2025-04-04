@@ -25,11 +25,11 @@ rules:
     - vuln
     likelihood: HIGH
     impact: MEDIUM
-    confidence: MEDIUM
+    confidence: LOW
   languages:
   - javascript
   - typescript
-  severity: ERROR
+  severity: WARNING
   mode: taint
   pattern-sources:
   - patterns:
