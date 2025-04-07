@@ -23,13 +23,13 @@ rules:
     cwe2021-top25: true
     subcategory:
     - vuln
-    likelihood: MEDIUM
+    likelihood: HIGH
     impact: MEDIUM
     confidence: LOW
   languages:
   - javascript
   - typescript
-  severity: WARNING
+  severity: ERROR
   mode: taint
   pattern-sources:
   - patterns:
