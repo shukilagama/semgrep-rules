@@ -6,6 +6,8 @@ rules:
     - pattern-not-inside: |
         USER $USER
         ...
+    - pattern-not-inside: |
+        HEALTHCHECK ... CMD ...
   fix: |
     USER non-root
     CMD $...VARS
