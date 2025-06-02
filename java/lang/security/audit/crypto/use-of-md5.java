@@ -9,7 +9,7 @@ public class Bad{
     byte[] hashValue = md5Digest.digest();
     return hashValue;
   }
-  
+
   public byte[] bad2(String password) {
     // ruleid: use-of-md5
     MessageDigest md5Digest = MessageDigest.getInstance("md5");
